@@ -1,4 +1,13 @@
 Query current metar data from the ADDS Experimental data server.
 
+Currently returns a subset of the metar data.
+  Temperature (converted to Fahrenheit)
+  Wind direction
+  Wind speed
+  Wind gust speed
+  Visibility
+
 
 License: MIT
+
+Originally created to support weather data on www.checkthesock.com 
