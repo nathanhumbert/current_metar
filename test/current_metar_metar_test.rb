@@ -1,7 +1,5 @@
 require 'test/unit'
 require 'current_metar'
-require 'current_metar/request'
-require 'current_metar/metar'
 require 'fakeweb'
 
 class CurrentMetarMetarTest < Test::Unit::TestCase
