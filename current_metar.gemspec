@@ -1,3 +1,4 @@
+require 'rake'
 Gem::Specification.new do |spec|
   spec.name = 'current_metar'
   spec.summary = 'Query current metar data from the ADDS Experimental data server.'
@@ -9,9 +10,9 @@ Gem::Specification.new do |spec|
   spec.files = [
     'README',
     'MIT_LICENSE',
-    'lib/**/*.rb'
   ]
-  spec.test_files = ['tests/**/*.rb']
+  spec.files += FileList['lib/**/*.rb']
+  spec.test_files = FileList['tests/**/*.rb']
   spec.has_rdoc = true
   spec.license = 'MIT'
   spec.add_development_dependency('fakeweb')
