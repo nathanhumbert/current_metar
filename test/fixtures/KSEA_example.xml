@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XML-Schema-instance" version="1.2" xsi:noNamespaceSchemaLocation="http://weather.aero/schema/metar1_2.xsd">
+  <request_index>62421424</request_index>
+  <data_source name="metars" />
+  <request type="retrieve" />
+  <errors />
+  <warnings />
+  <time_taken_ms>4</time_taken_ms>
+  <data num_results="1">
+    <METAR>
+      <raw_text>KSEA 250153Z 11012KT 10SM -RA OVC060 07/04 A2986 RMK AO2 SLP117 P0001 T00720044</raw_text>
+      <station_id>KSEA</station_id>
+      <observation_time>2010-12-25T01:53:00Z</observation_time>
+      <latitude>47.45</latitude>
+      <longitude>-122.32</longitude>
+      <temp_c>7.2</temp_c>
+      <dewpoint_c>4.4</dewpoint_c>
+      <wind_dir_degrees>110</wind_dir_degrees>
+      <wind_speed_kt>12</wind_speed_kt>
+      <visibility_statute_mi>10.0</visibility_statute_mi>
+      <altim_in_hg>29.861221</altim_in_hg>
+      <sea_level_pressure_mb>1011.7</sea_level_pressure_mb>
+      <quality_control_flags>
+        <auto_station>TRUE</auto_station>
+      </quality_control_flags>
+      <wx_string>-RA</wx_string>
+      <sky_condition sky_cover="OVC" cloud_base_ft_agl="6000" />
+      <flight_category>VFR</flight_category>
+      <precip_in>0.01</precip_in>
+      <metar_type>METAR</metar_type>
+      <elevation_m>136.0</elevation_m>
+    </METAR>
+  </data>
+</response>
+

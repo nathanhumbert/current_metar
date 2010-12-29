@@ -1,0 +1,2 @@
+module CurrentMetar
+end
