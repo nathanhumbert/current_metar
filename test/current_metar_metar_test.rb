@@ -7,7 +7,14 @@ class CurrentMetarMetarTest < Test::Unit::TestCase
   def setup 
     @body = IO.read(File.join('test', 'fixtures', 'KSEA_example.xml'))
     FakeWeb.register_uri(:get, 'http://weather.aero/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=KSEA', :body => @body )
+
     @metar = CurrentMetar::Metar.get_metar('KSEA')
+  end
+
+  def setup_no_results
+    @body = IO.read(File.join('test', 'fixtures', 'KCZQ_example.xml'))
+    FakeWeb.register_uri(:get, 'http://weather.aero/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&hoursBeforeNow=3&mostRecent=true&stationString=KCZQ', :body => @body )
+    @metar = CurrentMetar::Metar.get_metar('KCZQ')
   end
 
   def test_get_metar_sets_temperature
@@ -33,6 +40,21 @@ class CurrentMetarMetarTest < Test::Unit::TestCase
   def test_get_metar_available
     setup
     assert_equal true, @metar.available
+  end
+
+  def test_no_results_false
+    setup
+    assert_equal false, @metar.no_results
+  end
+
+  def test_no_results_metar_unavailable
+    setup_no_results
+    assert_equal false, @metar.available
+  end
+
+  def test_no_results_true
+    setup_no_results
+    assert_equal true, @metar.no_results
   end
 
   def test_get_metar_unavailable
