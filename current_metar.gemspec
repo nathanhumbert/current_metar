@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.summary = 'Query current metar data from the ADDS Experimental data server.'
   spec.description = 'current_metar queries the ADDS Experimental server to pull back current weather data for a specific reporting station'
   spec.homepage = 'https://github.com/nathanhumbert/current_metar'
-  spec.version = '0.1'
+  spec.version = '0.2'
   spec.authors = ['Nathan Humbert']
   spec.email = ['nathan.humbert@gmail.com']
   spec.files = [
