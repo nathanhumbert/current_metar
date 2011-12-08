@@ -1,5 +1,6 @@
 class CurrentMetar::Metar
   require 'rexml/document'
+  require 'time'
   attr_accessor :wind_speed, :wind_direction, :wind_gust_speed, :observation_time, :visibility, :temperature, :available, :no_results, :icao
 
   METAR_ATTRIBUTE_MAPPING = {
@@ -51,6 +52,9 @@ class CurrentMetar::Metar
   def parse_metar_xml(metar_xml)
     unless metar_xml.elements['temp_c'].nil?
       self.temperature = (9/5.0 * metar_xml.elements['temp_c'].text.to_i + 32).round
+    end
+    unless metar_xml.elements['observation_time'].nil?
+      self.observation_time = Time.parse(metar_xml.elements['observation_time'].text)
     end
     self.parse_standard_attributes(metar_xml)
   end
